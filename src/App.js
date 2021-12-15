@@ -24,6 +24,7 @@ class App extends React.Component {
       <>
         <nav>
         <header>Youtube React Project Feedback</header>
+        <Link to="/">Survey</Link>
         <Link to="/ReviewFeedback">All Feedback</Link>
         </nav>
         <Routes>
