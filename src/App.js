@@ -1,25 +1,38 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import FeedbackForm from './components/FeedbackForm';
+import ReviewFeedback from './components/ReviewFeedback';
+import {Routes, Route, Link} from "react-router-dom"
+import feedbackData from './data/feedbackData';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(){
+    super();
+    this.state = {
+      allFeedback: feedbackData
+    }
+  }
+
+  handleAllFeedback = (feedback) =>{
+    console.log(feedback)
+    this.setState({allFeedback : [...this.state.allFeedback, feedback]})
+  }
+ 
+  render(){
+    let {allFeedback} =this.state;
+    return (
+      <>
+        <nav>
+        <header>Youtube React Project Feedback</header>
+        <Link to="/ReviewFeedback">All Feedback</Link>
+        </nav>
+        <Routes>
+          <Route exact path="/" element={<FeedbackForm handleAllFeedback={this.handleAllFeedback}/>}/>
+          <Route path="/ReviewFeedback" element={<ReviewFeedback allFeedback={allFeedback}/>}/>
+        </Routes>
+      </>
+    );
+  }
 }
 
 export default App;
