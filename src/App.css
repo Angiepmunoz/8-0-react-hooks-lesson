@@ -1,0 +1,22 @@
+header {
+  background-color: grey;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  align-items: center;
+}
+
+header h2 {
+  align-items: center;
+}
+
+a.nav-link {
+  color: black;
+}
+
+.survey {
+  justify-self: end;
+}
+
+.review-feedback {
+  margin-left: 10px;
+}

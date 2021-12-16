@@ -22,11 +22,11 @@ class App extends React.Component {
     let {allFeedback} =this.state;
     return (
       <>
-        <nav>
-        <header>Youtube React Project Feedback</header>
-        <Link to="/">Survey</Link>
-        <Link to="/ReviewFeedback">All Feedback</Link>
-        </nav>
+        <header>
+          <h2>Youtube React Project Feedback</h2>
+          <Link to="/" className="nav-link survey">Survey</Link>
+          <Link to="/ReviewFeedback" className="nav-link review-feedback">All Feedback</Link>
+        </header>
         <Routes>
           <Route exact path="/" element={<FeedbackForm handleAllFeedback={this.handleAllFeedback}/>}/>
           <Route path="/ReviewFeedback" element={<ReviewFeedback allFeedback={allFeedback}/>}/>

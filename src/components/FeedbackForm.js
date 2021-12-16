@@ -1,4 +1,5 @@
 import React from "react";
+import "./FeedbackForm.css"
 
 class FeedbackForm extends React.Component {
   constructor() {
@@ -26,14 +27,18 @@ class FeedbackForm extends React.Component {
     return (
         <form onSubmit={(e)=>this.handleSubmit(e)}>
             <p>Rate your overall experience on the Youtube Project:</p>
-            <label for="exp-1">1</label>
-            <input id="exp-1" type="radio" name="projectExp" value="1" onChange={(e) => this.handleForm(e)}/>
-            <label for="exp-2">2</label>
-            <input id="exp-2" type="radio" name="projectExp" value="2" onChange={(e) => this.handleForm(e)}/>
-            <label for="exp-3">3</label>
-            <input id="exp-3" type="radio" name="projectExp" value="3" onChange={(e) => this.handleForm(e)}/>
-            <label for="exp-4">4</label>
-            <input id="exp-4" type="radio" name="projectExp" value="4" onChange={(e) => this.handleForm(e)}/>
+            <label for="exp-1">1
+                <input className="" id="exp-1" type="radio" name="projectExp" value="1" onChange={(e) => this.handleForm(e)}/>
+            </label>
+            <label for="exp-2">2
+                <input id="exp-2" type="radio" name="projectExp" value="2" onChange={(e) => this.handleForm(e)}/>
+            </label>
+            <label for="exp-3">3
+                <input id="exp-3" type="radio" name="projectExp" value="3" onChange={(e) => this.handleForm(e)}/>
+            </label>
+            <label for="exp-4">4
+                <input id="exp-4" type="radio" name="projectExp" value="4" onChange={(e) => this.handleForm(e)}/>
+            </label>
             <p>Provide feedback for your instructors:</p>
             <textarea id="instFeedback" name="instFeedback" onInput={(e) => this.handleForm(e)}></textarea >
             <p>Provide feedback for your group members:</p>

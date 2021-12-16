@@ -1,0 +1,20 @@
+form {
+    margin-left: 15%;
+    margin-right: 15%;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+
+form p {
+    grid-column: span 4;
+}
+
+form textarea {
+    grid-column: span 4;
+}
+
+form button {
+    grid-column: 4;
+    margin-top: 5px;
+}
