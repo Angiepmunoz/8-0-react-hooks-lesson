@@ -14,11 +14,8 @@ class App extends React.Component {
   }
 
   handleAllFeedback = (feedback) =>{
-    console.log(feedback)
     this.setState({allFeedback : [...this.state.allFeedback, feedback]})
-  }
-
- 
+  } 
  
   render(){
     let {allFeedback} =this.state;
