@@ -1,9 +1,9 @@
 import './App.css';
 import React from 'react';
-import FeedbackForm from './components/FeedbackForm';
+import feedbackData from './data/feedbackData';
 import ReviewFeedback from './components/ReviewFeedback';
 import {Routes, Route, Link} from "react-router-dom"
-import feedbackData from './data/feedbackData';
+import MainPage from './components/MainPage'
 
 class App extends React.Component {
   constructor(){
@@ -17,6 +17,8 @@ class App extends React.Component {
     console.log(feedback)
     this.setState({allFeedback : [...this.state.allFeedback, feedback]})
   }
+
+ 
  
   render(){
     let {allFeedback} =this.state;
@@ -28,7 +30,7 @@ class App extends React.Component {
           <Link to="/ReviewFeedback" className="nav-link review-feedback">All Feedback</Link>
         </header>
         <Routes>
-          <Route exact path="/" element={<FeedbackForm handleAllFeedback={this.handleAllFeedback}/>}/>
+          <Route exact path="/" element={<MainPage handleAllFeedback={this.handleAllFeedback}/>}/>
           <Route path="/ReviewFeedback" element={<ReviewFeedback allFeedback={allFeedback}/>}/>
         </Routes>
       </>
